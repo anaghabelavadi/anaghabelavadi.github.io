@@ -8605,10 +8605,4 @@ input, select, textarea {
 				box-shadow: none !important;
 			}
 
-.image video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* makes sure video fills space like a background */
-  border-radius: inherit; /* keeps rounded corners if template has them */
-  display: block;
-}
+
