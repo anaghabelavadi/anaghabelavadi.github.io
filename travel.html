@@ -102,7 +102,8 @@
     const marker = L.marker([p.lat, p.lng]).addTo(map);
     marker.bindPopup(`
       <strong>${p.name}</strong><br/>
-      <a href="${p.url}" target="_blank" rel="noopener">View on Google Maps</a>
+      #<a href="${p.url}" target="_blank" rel="noopener">View on Google Maps</a>
+	  <a href="#${p.targetId}">Jump to photo ↓</a>
     `);
     bounds.push([p.lat, p.lng]);
   });
