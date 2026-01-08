@@ -10,6 +10,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+		
+		<link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@2.4.0/Control.FullScreen.css" />
+		<script src="https://unpkg.com/leaflet.fullscreen@2.4.0/Control.FullScreen.js"></script>
+		
+		<style>
+		  #travel-map{
+		    width: min(1100px, 92vw);
+		    height: 520px;          /* THIS is required */
+		    margin: 40px auto 10px auto;
+		    border-radius: 16px;
+		    overflow: hidden;
+		  }
+		</style>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
