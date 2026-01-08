@@ -36,6 +36,66 @@
 			</section>
 
 
+			<section style="padding: 0 0 10px 0;">
+  <div style="text-align:center;">
+    <h2 style="margin: 0 0 10px 0;">Places I’ve been</h2>
+    <p style="margin: 0 0 18px 0; color:#666;">Drag, zoom, or open fullscreen. Click markers for photos + map links.</p>
+  </div>
+
+  <div id="travel-map"></div>
+</section>
+
+
+
+			
+<script>
+  // Create the map (world view)
+  const map = L.map('travel-map', {
+    scrollWheelZoom: false,   // prevents annoying scroll hijack
+    fullscreenControl: true   // adds expand/fullscreen button
+  }).setView([20, 0], 2);
+
+  // Free map tiles (OpenStreetMap)
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Add your places here (as many as you want)
+  const places = [
+    {
+      name: "Golden Gate Bridge (Pacific Overlook)",
+      lat: 37.8079, lng: -122.4750,
+      url: "https://maps.app.goo.gl/Aq7zJFj2xKCSXorZ8"
+    },
+    {
+      name: "Huntington Beach Pier",
+      lat: 33.6552, lng: -118.0016,
+      url: "https://maps.app.goo.gl/DZnAHHyKxDD965sJ8"
+    },
+    {
+      name: "Pelican Cove Park, Rancho Palos Verdes",
+      lat: 33.7420, lng: -118.4140,
+      url: "https://maps.app.goo.gl/wceuRJDHfRoYFDqv5"
+    }
+  ];
+
+  const bounds = [];
+
+  places.forEach(p => {
+    const marker = L.marker([p.lat, p.lng]).addTo(map);
+    marker.bindPopup(`
+      <strong>${p.name}</strong><br/>
+      <a href="${p.url}" target="_blank" rel="noopener">View on Google Maps</a>
+    `);
+    bounds.push([p.lat, p.lng]);
+  });
+
+  // Auto-fit to all markers (nice when you add many)
+  if (bounds.length > 1) map.fitBounds(bounds, { padding: [30, 30] });
+</script>
+
+
  <!-- Image Grid -->
 
 			
@@ -58,6 +118,11 @@
 </div>
 
 
+
+
+
+
+			
 
 		
 <!-- Each image -->
