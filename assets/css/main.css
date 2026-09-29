@@ -8606,6 +8606,12 @@ input, select, textarea {
 			}
 
 		/* Show the whole image instead of cropping it */
+		.no-crop .image {
+			background-color: #ffffff !important;   /* match the page background */
+		}
+		.no-crop .image:before {
+			display: none !important;               /* hide the theme's loading icon */
+		}
 		.no-crop .image img {
 			object-fit: contain !important;
 			-webkit-object-fit: contain !important;
