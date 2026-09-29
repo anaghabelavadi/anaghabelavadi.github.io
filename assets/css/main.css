@@ -8604,3 +8604,10 @@ input, select, textarea {
 			#wrapper.divided > .invert:first-child {
 				box-shadow: none !important;
 			}
+
+		/* Show the whole image instead of cropping it */
+		.no-crop .image img {
+			object-fit: contain !important;
+			-webkit-object-fit: contain !important;
+			object-position: center !important;
+		}
