@@ -6,6 +6,30 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Recently read: one horizontal row, newest first; scrolls sideways as it grows */
+			#recent .items.style1 {
+				flex-wrap: nowrap;
+				justify-content: flex-start;
+				overflow-x: auto;
+				scroll-snap-type: x mandatory;
+				-webkit-overflow-scrolling: touch;
+				padding-bottom: 1rem;
+			}
+			#recent .items.style1 > * {
+				flex: 0 0 22rem;
+				width: 22rem;
+				padding: 2.1875rem 2.1875rem 0.1875rem 2.1875rem;
+				border-top-width: 0;
+				border-left-width: 1px;
+				scroll-snap-align: start;
+			}
+			#recent .items.style1 > *:first-child { border-left-width: 0; margin-left: auto; }
+			#recent .items.style1 > *:last-child { margin-right: auto; }
+			@media screen and (max-width: 480px) {
+				#recent .items.style1 > * { flex-basis: 80vw; width: 80vw; padding: 2rem 1.5rem 0.5rem 1.5rem; }
+			}
+		</style>
 	</head>
 <!-- Header -->
 <div include-html="header.html"></div>
@@ -38,13 +62,13 @@
 					<div class="items style1 medium onscroll-fade-in">
 						<section>
 							<span class="icon solid style2 major fa-book-open"></span>
-							<h3>Anxious People: A Novel</h3>
-							<p><em>Fredrik Backman</em><br />Reading</p>
+							<h3>What I Talk About When I Talk About Running</h3>
+							<p><em>Haruki Murakami</em><br />Reading</p>
 						</section>
 						<section>
 							<span class="icon solid style2 major fa-book-open"></span>
-							<h3>The Boy in the Striped Pyjamas</h3>
-							<p><em>John Boyne</em><br />Reading</p>
+							<h3>The Metamorphosis</h3>
+							<p><em>Franz Kafka</em><br />Reading</p>
 						</section>
 						<section>
 							<span class="icon solid style2 major fa-headphones"></span>
@@ -61,6 +85,13 @@
 					<h2>Recently Read &amp; Listened</h2>
 					<p>What stayed with me.</p>
 					<div class="items style1 medium onscroll-fade-in">
+						<!-- Newest first: add new finishes at the top of this list -->
+						<section>
+							<span class="icon solid style2 major fa-book"></span>
+							<h3>The Boy in the Striped Pyjamas</h3>
+							<p><em>John Boyne</em><br />Read · Nov 2026</p>
+							<p>One of the saddest things I've ever read, and yet I'm just happy they had each other.</p>
+						</section>
 						<section>
 							<span class="icon solid style2 major fa-book"></span>
 							<h3>The Midnight Library</h3>
@@ -86,11 +117,10 @@
 					<p>Roughly in the order I plan to read them, subject to mood.</p>
 					<div style="text-align: left; max-width: 56rem; margin: 0 auto;">
 						<ol style="columns: 2 18rem; column-gap: 3rem; padding-left: 2rem;">
+							<li>Anxious People — <em>Fredrik Backman</em></li>
 							<li>Before the Coffee Gets Cold — <em>Toshikazu Kawaguchi</em></li>
 							<li>Tiny Experiments — <em>Anne-Laure Le Cunff</em></li>
-							<li>The Metamorphosis — <em>Franz Kafka</em></li>
 							<li>A Gentleman in Moscow — <em>Amor Towles</em></li>
-							<li>What I Talk About When I Talk About Running — <em>Haruki Murakami</em></li>
 							<li>So Good They Can't Ignore You — <em>Cal Newport</em></li>
 							<li>Days at the Morisaki Bookshop — <em>Satoshi Yagisawa</em></li>
 							<li>The Idiot — <em>Elif Batuman</em></li>
